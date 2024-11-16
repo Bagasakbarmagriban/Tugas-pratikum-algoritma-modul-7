@@ -1,0 +1,21 @@
+#Bagas akbar magriban
+#065002400004
+print("Program untuk angka ordinal")
+
+def make_ordinal(n):
+    suffixes = ['th', 'st', 'nd', 'rd'] + ['th'] * 6
+    suffix = suffixes[min(n % 10, 4)]
+    if 11 <= n % 100 <= 13:
+        suffix = 'th'
+    print(f"({n}, \"{suffix}\")")
+
+while True:
+    print("Gunakan '-1' untuk menghentikan")
+    try:
+        n = int(input("Masukkan angka: "))
+        if n == -1:
+            print("Terima kasih telah menggunakan program saya.")
+            break
+        make_ordinal(n)
+    except ValueError:
+        print("Input harus berupa angka!")
