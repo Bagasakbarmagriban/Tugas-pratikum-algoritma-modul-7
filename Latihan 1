@@ -1,0 +1,34 @@
+#Bagas akbar magriban
+#065002400004
+import math
+
+def is_number_prime(num):
+    if num < 2:
+        return False
+    limit = int(math.sqrt(num)) + 1
+    for divisor in range(2, limit):
+        if num % divisor == 0:
+            return False
+    return True
+
+def evaluate_number(num):
+    if is_number_prime(num):
+        print(f"{num} adalah bilangan Prima")
+    else:
+        print(f"{num} bukan bilangan Prima")
+
+stop = False
+while not stop:
+    print("Ketik 0 untuk keluar")
+    try:
+        user_input = int(input("Masukkan angka: "))
+        if user_input == 0:
+            stop = True
+        else:
+            evaluate_number(user_input)
+    except ValueError:
+        print("Input harus berupa angka. Coba lagi!")
+
+
+
+
